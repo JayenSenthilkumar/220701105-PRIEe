@@ -1,0 +1,52 @@
+<div class="container">
+  <h2>Real Estate Investment Tracker</h2>
+  
+  <!-- Investment Form -->
+  <div class="form">
+    <h3>Add New Investment</h3>
+    <form (ngSubmit)="addInvestment()">
+      <div>
+        <label>Property Name:</label>
+        <input type="text" [(ngModel)]="newInvestment.propertyName" name="propertyName" required>
+      </div>
+      <div>
+        <label>Purchase Price:</label>
+        <input type="number" [(ngModel)]="newInvestment.purchasePrice" name="purchasePrice" required>
+      </div>
+      <div>
+        <label>Monthly Rental Income:</label>
+        <input type="number" [(ngModel)]="newInvestment.rentalIncome" name="rentalIncome" required>
+      </div>
+      <div>
+        <label>Monthly Expenses:</label>
+        <input type="number" [(ngModel)]="newInvestment.expenses" name="expenses" required>
+      </div>
+      <button type="submit">Add Investment</button>
+    </form>
+  </div>
+
+  <!-- Investment List -->
+  <div class="investment-list">
+    <h3>Investments</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Property Name</th>
+          <th>Purchase Price</th>
+          <th>Monthly Rental Income</th>
+          <th>Monthly Expenses</th>
+          <th>ROI (%)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let inv of investments">
+          <td>{{ inv.propertyName }}</td>
+          <td>{{ inv.purchasePrice | currency }}</td>
+          <td>{{ inv.rentalIncome | currency }}</td>
+          <td>{{ inv.expenses | currency }}</td>
+          <td>{{ calculateROI(inv) | number:'1.0-2' }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
