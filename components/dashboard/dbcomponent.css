@@ -1,0 +1,26 @@
+.dashboard-container {
+    max-width: 800px;
+    margin: auto;
+    text-align: center;
+  }
+  
+  .stats {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+  }
+  
+  .stat-card {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 30%;
+  }
+  
+  .stat-card h3 {
+    margin-bottom: 10px;
+    color: #007bff;
+  }
+  

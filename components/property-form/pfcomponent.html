@@ -1,0 +1,21 @@
+<form [formGroup]="propertyForm" (ngSubmit)="onSubmit()">
+    <h2>{{ property ? 'Edit Property' : 'Add Property' }}</h2>
+  
+    <label for="name">Property Name</label>
+    <input id="name" formControlName="name" required />
+  
+    <label for="price">Price</label>
+    <input id="price" type="number" formControlName="price" required />
+  
+    <label for="rentalIncome">Rental Income</label>
+    <input id="rentalIncome" type="number" formControlName="rentalIncome" required />
+  
+    <label for="roi">ROI (%)</label>
+    <input id="roi" type="number" formControlName="roi" required />
+  
+    <label for="imageUrl">Image URL</label>
+    <input id="imageUrl" formControlName="imageUrl" required />
+  
+    <button type="submit" [disabled]="propertyForm.invalid">Save Property</button>
+  </form>
+  

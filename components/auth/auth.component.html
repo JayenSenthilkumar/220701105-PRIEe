@@ -1,0 +1,16 @@
+<div class="auth-container">
+    <h2>{{ isLoginMode ? 'Login' : 'Register' }}</h2>
+    <form>
+      <label>Email</label>
+      <input type="email" required>
+      
+      <label>Password</label>
+      <input type="password" required>
+  
+      <button mat-button>{{ isLoginMode ? 'Login' : 'Register' }}</button>
+    </form>
+    <p (click)="toggleMode()">
+      {{ isLoginMode ? "Don't have an account? Register" : "Already have an account? Login" }}
+    </p>
+  </div>
+  

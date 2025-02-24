@@ -1,0 +1,18 @@
+<div class="grid-container">
+    <mat-card *ngFor="let property of properties" class="property-card">
+      <img [src]="property.imageUrl" alt="Property Image" class="property-image" />
+      
+      <div class="property-details">
+        <h3>{{ property.name }}</h3>
+        <p><strong>Price:</strong> {{ property.price | currency }}</p>
+        <p><strong>Rental Income:</strong> {{ property.rentalIncome | currency }}</p>
+        <p><strong>ROI:</strong> {{ property.roi }}%</p>
+      </div>
+  
+      <div class="actions">
+        <button mat-button color="primary" (click)="editProperty(property)">Edit</button>
+        <button mat-button color="warn" (click)="deleteProperty(property.id)">Delete</button>
+      </div>
+    </mat-card>
+  </div>
+  
